@@ -1,0 +1,59 @@
+/* Page 2 Specific Styles */
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #ffecf1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  width: 400px;
+}
+
+h1 {
+  color: #ff6f91;
+  font-size: 2.5em;
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.5em;
+  color: #555;
+}
+
+/* Button Styles */
+button {
+  margin-top: 20px;
+  padding: 12px 40px;
+  font-size: 1.2em;
+  background-color: #ff6f91;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ff4560;
+  box-shadow: 0 0 15px rgba(255, 105, 135, 0.6), 0 0 30px rgba(255, 105, 135, 0.4);
+}
+
+/* Ensure Buttons are Visible */
+button {
+  display: inline-block;
+  width: 200px;
+}
+
+button + button {
+  margin-top: 10px;
+}

@@ -1,0 +1,92 @@
+/* General Aesthetic Settings */
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  overflow: hidden;
+  background-color: #ffecf1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 24px rgba(255, 105, 135, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced Shadow */
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  width: 400px;
+  height: 450px; /* Ensures enough space for all elements */
+}
+
+h1 {
+  color: #ff6f91;
+  font-size: 3em;
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.5em;
+  color: #555;
+}
+
+/* Heart Settings */
+.heart-container {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+  transform: translateX(0px); /* Centered horizontally */
+}
+
+.heart {
+  fill: url(#gradient);
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.heart-container:hover .heart {
+  transform: scale(1.2); /* Heart grows when hovered */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Glow Effect */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px rgba(255, 105, 135, 0.6));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 40px rgba(255, 105, 135, 0.8));
+  }
+}
+
+/* Continue Button */
+a {
+  text-decoration: none;
+}
+
+button {
+  position: absolute;
+  left: 50%; /* Center the button horizontally */
+  bottom: 30px; /* Position button near the bottom */
+  transform: translateX(-50%); /* Perfect horizontal centering */
+  padding: 12px 40px;
+  font-size: 1.2em;
+  background-color: #ff6f91;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover */
+  font-family: 'Quicksand', sans-serif;
+}
+
+button:hover {
+  background-color: #ff4560;
+  box-shadow: 0 0 15px rgba(255, 105, 135, 0.6), 0 0 30px rgba(255, 105, 135, 0.4); /* Enhanced hover effect */
+}

@@ -1,0 +1,146 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #00b300; /* Starbucks green background */
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Christmas Lights Background */
+.christmas-lights {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Confirmation Container */
+.confirmation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  max-width: 600px;
+  width: 80%;
+  max-height: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px 30px;
+}
+
+h1 {
+  color: #ff6f91; /* Starbucks heading */
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+ul#cart-items {
+  flex: 1;
+  overflow-y: auto;
+  margin: 0;
+  padding: 10px 0;
+  background-color: white;
+}
+
+ul#cart-items li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #333;
+  list-style: none; /* Removes bullets */
+}
+
+/* Buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Space between buttons */
+  margin-top: 15px;
+}
+
+.button {
+  padding: 10px 40px; /* Compact size, less width */
+  font-size: 1.2em;
+  background-color: #ff6f91;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Quicksand', sans-serif;
+  position: sticky;
+  bottom: 20px; /* Position it at the bottom */
+  z-index: 2;
+  margin-bottom: 20px;
+  width: auto; /* Automatic width */
+  max-width: 300px; /* Maximum width for button */
+  align-self: center; /* Center it horizontally */
+  text-decoration: none; /* Remove underline from button text */
+}
+
+.button:hover {
+  background-color: #ff4560;
+  box-shadow: 0 0 15px rgba(255, 105, 135, 0.6), 0 0 30px rgba(255, 105, 135, 0.4);
+}
+
+.proceed-button {
+  background-color: #ff6f91; /* Christmas Red for second button */
+}
+
+.proceed-button:hover {
+  background-color: #ff4560;
+  box-shadow: 0 0 15px rgba(255, 105, 135, 0.6), 0 0 30px rgba(255, 105, 135, 0.4);
+}
+
+/* Snowflake styling */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: snowfall linear infinite;
+  will-change: transform, opacity;
+  z-index: -1; /* Ensure snowflakes are in the background */
+}
+
+/* Smooth wave-like snowfall with reduced horizontal drift */
+@keyframes snowfall {
+  0% {
+    transform: translate(var(--horizontalMovement), 0); /* Start at random left position */
+    opacity: 1;
+  }
+  25% {
+    transform: translate(var(--horizontalMovement), 25vh); /* Curve gently to the right */
+  }
+  50% {
+    transform: translate(var(--horizontalMovement), 50vh); /* Curve gently back to the left */
+  }
+  75% {
+    transform: translate(var(--horizontalMovement), 75vh); /* Sway to the right again */
+  }
+  100% {
+    transform: translate(var(--horizontalMovement), 100vh); /* Finish directly below the start */
+    opacity: 0.5; /* Gradually fade out */
+  }
+}
+
+/* Make sure the background remains unaffected by the snowflakes */
+body {
+  position: relative;
+  z-index: 1; /* Ensure body content is above the snowflakes */
+  overflow: hidden; /* Prevent snowflakes from going outside the viewport */
+}

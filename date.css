@@ -1,0 +1,193 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0; /* Remove padding */
+  box-sizing: border-box;
+  height: 100vh; /* Ensure body takes full viewport height */
+  overflow: hidden; /* Prevent scrolling */
+  position: relative; /* Ensure snowfall stays in the background */
+}
+
+/* Background color animation */
+body {
+  animation: backgroundColorChange 5s forwards; /* Keep it green after transition */
+}
+
+/* Keyframes for background color animation */
+@keyframes backgroundColorChange {
+  0% {
+    background-color: #ffecf1; /* Original color */
+  }
+  100% {
+    background-color: #00b300; /* Green for Christmas */
+  }
+}
+
+/* Header and Subheading */
+header {
+  position: relative; /* Ensure header is above the snowfall */
+  z-index: 2; /* Bring header in front of the snowfall */
+  text-align: center;
+  margin: 0;
+  padding: 0; /* Remove padding to eliminate space around the image */
+  width: 100%; /* Make the header span the entire width */
+  background-image: url('christmas-lights.png'); /* Add the Christmas lights image */
+  background-size: cover;
+  background-position: top center;
+  height: 300px; /* Increased the height of the header to show the full image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack heading and subheading vertically */
+}
+
+header h1 {
+  color: #ff6f91;
+  font-size: 2.8em;
+  font-family: 'Dancing Script', cursive;
+  margin: 0;
+  padding-bottom: 10px; /* Add some space below the heading */
+  z-index: 2; /* Ensure heading stays in front of snowfall */
+  margin-top: 50px; /* Adjusted to keep heading in place */
+}
+
+header h2 {
+  color: black; /* Change subheading text to black for better visibility */
+  font-size: 1.6em;
+  margin: 0;
+  z-index: 2; /* Ensure subheading stays in front of snowfall */
+  margin-top: 10px; /* Move subheading down below heading */
+}
+
+/* Container for Place Section */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 24px rgba(255, 105, 135, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 520px;
+  margin-top: 60px;
+}
+
+.place-title {
+  align-self: flex-start;
+  margin-bottom: 15px;
+}
+
+.place-title p {
+  font-size: 1.5em;
+  color: #555;
+  margin: 0;
+}
+
+/* Place Section */
+.place-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.place-section .place-button {
+  width: 385px;
+  height: 210px;
+  border-radius: 20px;
+  background-image: url('starbucks-logo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 105, 135, 0.6), 0 0 30px rgba(255, 105, 135, 0.4);
+}
+
+.place-section .place-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 105, 135, 0.7), 0 0 40px rgba(255, 105, 135, 0.5);
+}
+
+/* Text below the button */
+.starbucks-date-text {
+  font-size: 1.5em;
+  color: #ff6f91;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Small guiding text */
+.guide-text {
+  font-size: 1.2em;
+  color: #ff6f91;
+  margin-top: 5px; /* Reduced margin-top to bring the texts closer */
+  text-align: center;
+}
+
+/* Snowflake styling */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: snowfall linear infinite;
+  will-change: transform, opacity;
+  z-index: -1; /* Ensure snowflakes are in the background */
+}
+
+/* Smooth wave-like snowfall with reduced horizontal drift */
+@keyframes snowfall {
+  0% {
+    transform: translate(var(--horizontalMovement), 0); /* Start at random left position */
+    opacity: 1;
+  }
+  25% {
+    transform: translate(var(--horizontalMovement), 25vh); /* Curve gently to the right */
+  }
+  50% {
+    transform: translate(var(--horizontalMovement), 50vh); /* Curve gently back to the left */
+  }
+  75% {
+    transform: translate(var(--horizontalMovement), 75vh); /* Sway to the right again */
+  }
+  100% {
+    transform: translate(var(--horizontalMovement), 100vh); /* Finish directly below the start */
+    opacity: 0.5; /* Gradually fade out */
+  }
+}
+
+/* Make sure the background remains unaffected by the snowflakes */
+body {
+  position: relative;
+  z-index: 1; /* Ensure body content is above the snowflakes */
+  overflow: hidden; /* Prevent snowflakes from going outside the viewport */
+}
+
+/* Position the Christmas Tree at the bottom left (adjusted position) */
+#christmas-tree {
+  position: absolute;
+  bottom: -20px; /* Moved further down */
+  left: -270px;
+  width: 1000px; /* Increased size of the tree */
+  z-index: 3; /* Ensure it stays above the snowfall */
+}
+
+/* Position the Christmas at the bottom right (adjusted position) */
+#christmas {
+  position: absolute;
+  bottom: 10px; /* Moved further down */
+  right: 25px;
+  width: 500px; /* Increased size of the GIF */
+  z-index: 3; /* Ensure it stays above the snowfall */
+}

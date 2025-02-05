@@ -1,0 +1,262 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #00b300;
+  background-image: url('path_to_your_christmas_lights_image.png'); /* Add the path to your image */
+  background-position: top center; /* Position it at the top center */
+  background-repeat: no-repeat;
+  background-size: cover; /* Make the background cover the top of the page */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Snowfall Styling */
+#snowfall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Snowflake Styling */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: snowfall linear infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(25vh) translateX(20px); /* Curved path */
+  }
+  50% {
+    transform: translateY(50vh) translateX(-20px); /* Curved path */
+  }
+  75% {
+    transform: translateY(75vh) translateX(15px); /* Curved path */
+  }
+  100% {
+    transform: translateY(100vh) translateX(0); /* Smooth fall */
+  }
+}
+
+/* Menu Container */
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  width: 30%;
+  margin: 20px auto;
+  border-radius: 8px;
+  background-color: white;
+  padding: 40px 100px 65px 100px; /* Increased padding for the header area */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  min-height: 200px;
+  /* Removed black border */
+}
+
+/* Main Heading Styling (Webpage Heading) */
+header h1 {
+  color: #ff6f91;  /* Set the color to pink */
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;  /* Making it bold */
+  margin-top: 120px; /* Increased margin to move the heading lower */
+}
+
+header h2 {
+  text-align: center;
+}
+
+/* Starbucks Menu Heading - Bold and Pink (h3) */
+.menu-container h3 {
+  margin-top: 0px;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ff6f91;
+  padding: 2px 2px;
+}
+
+/* Menu Section Headings (h4) - Pink like Add to Cart Button */
+.menu-section h4 {
+  color: #ff6f91;  /* Set the color to pink */
+  font-size: 1.6em;
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: left; /* Align section headings to the left */
+}
+
+/* Menu Item Subsection Headings (h5) - Make Bold */
+.menu-section h5 {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #333;  /* Keep the color neutral for h5 */
+  text-align: left; /* Align subsection headings to the left */
+}
+
+/* Menu Items Container - scrolling enabled */
+.menu-items {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 400px; /* Adjust height as needed */
+  width: 100%;
+  margin-bottom: 20px;
+  padding-right: 10px;
+  scrollbar-width: thin;
+}
+
+/* Scrollbar Styling */
+.menu-items::-webkit-scrollbar {
+  width: 8px;
+}
+
+.menu-items::-webkit-scrollbar-thumb {
+  background: #ff6f91;
+  border-radius: 8px;
+}
+
+.menu-items::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Menu Item Styling */
+.menu-item {
+  text-align: left;  /* Align text to the left */
+  max-width: 100%;  /* Remove the width limit so items align properly */
+  margin-bottom: 20px;
+}
+
+.menu-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.menu-item h4 {
+  color: #ff6f91;
+  font-size: 1.3em;
+  text-align: left; /* Align item title to the left */
+}
+
+.menu-item p {
+  font-size: 1em;
+  color: #555;
+  text-align: left; /* Align item description to the left */
+}
+
+/* Add to Cart Button */
+a {
+  text-decoration: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  width: 100%; /* Make sure it takes full width to center the button */
+}
+
+button.add-to-cart-button {
+  padding: 10px 40px; /* Compact size, less width */
+  font-size: 1.2em;
+  background-color: #ff6f91;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Quicksand', sans-serif;
+  position: absolute;
+  left: 280px;
+  bottom: 10px; /* Position it at the bottom */
+  z-index: 2;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: auto; /* Automatic width */
+  max-width: 300px; /* Maximum width for button */
+  align-self: center; /* Center it horizontally */
+}
+
+.add-to-cart-button:hover {
+  background-color: #ff4560;
+  box-shadow: 0 0 15px rgba(255, 105, 135, 0.6), 0 0 30px rgba(255, 105, 135, 0.4);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* Christmas Lights Image Styling */
+.christmas-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;  /* Adjust based on your image */
+  z-index: -1;  /* Put it behind the content */
+}
+
+/* Snowflake styling */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: snowfall linear infinite;
+  will-change: transform, opacity;
+  z-index: -1; /* Ensure snowflakes are in the background */
+}
+
+/* Smooth wave-like snowfall with reduced horizontal drift */
+@keyframes snowfall {
+  0% {
+    transform: translate(var(--horizontalMovement), 0); /* Start at random left position */
+    opacity: 1;
+  }
+  25% {
+    transform: translate(var(--horizontalMovement), 25vh); /* Curve gently to the right */
+  }
+  50% {
+    transform: translate(var(--horizontalMovement), 50vh); /* Curve gently back to the left */
+  }
+  75% {
+    transform: translate(var(--horizontalMovement), 75vh); /* Sway to the right again */
+  }
+  100% {
+    transform: translate(var(--horizontalMovement), 100vh); /* Finish directly below the start */
+    opacity: 0.5; /* Gradually fade out */
+  }
+}
+
+/* Make sure the background remains unaffected by the snowflakes */
+body {
+  position: relative;
+  z-index: 1; /* Ensure body content is above the snowflakes */
+  overflow: hidden; /* Prevent snowflakes from going outside the viewport */
+}
